@@ -1,0 +1,14 @@
+<form [formGroup]="checkoutForm" (ngSubmit)="postData();" >
+    <div>
+        <label> Username </label>
+        <input type="text"  formControlName="emailAddr"  />
+    </div>
+
+    <div>
+        <label> User </label>
+        <input type="text" formControlName="quantity" />
+    </div>
+
+    <button> SUbmit </button>
+
+</form>

@@ -1,0 +1,37 @@
+<p>register works!</p>
+
+<form [formGroup]="register"  >
+    <div>
+        <label> Name </label>
+        <input type="text" formControlName="name" />
+    </div>
+    <div>
+        <label> Username </label>
+        <input type="text" formControlName="username" />
+    </div>
+    <div>
+        <label> Description </label>
+        <input type="text" formControlName="description" />
+    </div>
+    <div>
+        <label> Check this  </label>
+        <input type="checkbox" formControlName="terms" />
+    </div>
+
+    <hr />
+
+    <div formArrayName="items"  > 
+        <div *ngFor="let item of register.controls.items['controls']; index as i  " [formGroupName]="i" >
+            <p> {{item.value.itemName}} </p>
+            <input type="text" formControlName="x"  /> 
+            <br />
+            <input type="text" formControlName="itemName" />
+            <br />
+            <input type="text" formControlName="itemDesc" />
+            
+        </div>
+    </div>
+    
+
+    <button> Submit </button>
+</form>

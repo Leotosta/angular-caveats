@@ -1,0 +1,17 @@
+<form [formGroup]="signupForm" (ngSubmit)="postData();" >
+    <div>
+        <label> email </label>
+        <input type="email" formControlName="email"  />
+        <span *ngIf="signupForm.get('email').touched && signupForm.get('email').hasError('required')"> Enter error </span>
+    </div>
+    <div>
+        <label> UserName </label>
+        <input type="text" formControlName="username"  />
+        <span *ngIf="signupForm.get('email').touched && signupForm.get('email').hasError('minlength')">  error </span>
+
+    </div>
+
+    <button> Submit </button>
+    <button (click)="resetForm();" > Clear </button>
+
+</form>

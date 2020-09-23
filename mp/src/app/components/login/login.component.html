@@ -1,0 +1,17 @@
+<form #signInForm="ngForm" (ngSubmit)="loginUser(signInForm);"  >
+    <div>
+        <label> Username </label>
+        <input type="text" name="user" ngModel required #emailAdressField="ngModel" />
+    </div>
+
+    <div>
+        <label> Password </label>
+        <input type="password" name="pass" ngModel required/>
+    </div>
+    <!-- <small *ngIf="emailAdressField.touched && !emailAdressField.valid" > Enter address email! </small>  -->
+
+    <button [disabled]="!signInForm.valid"> let submit {{user}} </button>
+
+</form>
+
+<router-outlet></router-outlet>
